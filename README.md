@@ -1,2 +1,2 @@
-# MensaChemnitz.Android.Native
+# MensaChemnitz.Android
 
