@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MensaChemnitz</string>
+
+    <string name="refresh">Aktualisieren</string>
+    <string name="change_location">Standort wechseln</string>
+
+    <string name="show_mensa">Zeige Mensa</string>
+    <string name="show_cafeteria">Zeige Caféteria</string>
+
+    <string name="loading">Wird geladen...</string>
+    <string name="no_menu_available">Es liegen noch keine Daten für diesen Tag vor oder es besteht ein Problem mit der Internetverbindung. Bitte versuche es später erneut.</string>
+
+    <string name="holiday_subtitle">Gesetzlicher Feiertag in Sachsen. Universität und Mensa sind geschlossen.</string>
+
+    <string name="settings">Einstellungen</string>
+
+    <string name="about">Über</string>
+    <string name="about_copyright">© 2012-2021 René Bergelt\nAlle Rechte vorbehalten.</string>
+    <string name="about_disclaimer">Diese App ist kostenlos und werbefrei.</string>
+
+    <string name="used_cache_space">Belegter Speicherplatz:</string>
+    <string name="clear_cache">Leeren</string>
+</resources>

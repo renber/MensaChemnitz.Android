@@ -1,0 +1,48 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <PreferenceCategory app:title="Anzeige">
+
+       <DropDownPreference
+           app:key="startupMensa"
+           app:icon="@drawable/startup"
+           app:title="Nach dem Start diese Mensa zeigen:"
+           app:summary="%s"
+           app:entries="@array/startup_mensa_entries"
+           app:entryValues="@array/startup_mensa_values"
+           app:defaultValue="lastMensa"
+           />
+
+       <SwitchPreferenceCompat
+           app:key="nextDayAfterLunch"
+           app:title="Nach 14 Uhr nächsten Tag zeigen"
+           app:summaryOn="Beim Start der Anwendung nach 14 Uhr zum nächsten Tag wechseln"
+           app:summaryOff="Nach dem Start immer das aktuelle Angebot zeigen"
+           app:icon="@drawable/clock"
+           app:defaultValue="true" />
+
+       <SwitchPreferenceCompat
+        app:key="veggieMode"
+        app:title="Vegetarische Karte"
+        app:summaryOn="Nur vegetarische und vegane Gerichte zeigen"
+        app:summaryOff="Alle Gerichte zeigen"
+        app:icon="@drawable/vegetarian"
+        app:defaultValue="false" />
+
+
+   </PreferenceCategory>
+
+    <PreferenceCategory app:title="Lokaler Cache">
+
+        <SwitchPreferenceCompat
+            app:key="useCache"
+            app:title="Cache benutzen"
+            app:summaryOn="Speisepläne und Bilder lokal zwischenspeichern"
+            app:summaryOff="Speisepläne und Bilder nicht speichern"
+            app:icon="@drawable/cache"
+            app:defaultValue="true" />
+
+        <de.renebergelt.mensachemnitz.ui.controls.CacheSizePreference />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

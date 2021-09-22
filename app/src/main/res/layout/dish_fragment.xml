@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:grid="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="viewModel" type="de.renebergelt.mensachemnitz.viewmodels.DishViewModel"/>
+    </data>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginRight="5dp">
+            <ImageView
+                android:id="@+id/plate_imageView"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:plateImageSource="@{viewModel.image}" />
+
+            <TextView
+                android:visibility="@{viewModel.hasImage ? View.GONE : View.VISIBLE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/plate_imageView"
+                android:layout_alignTop="@+id/plate_imageView"
+                android:layout_alignRight="@+id/plate_imageView"
+                android:layout_alignBottom="@+id/plate_imageView"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Noch kein Bild verfügbar"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/text_dark"
+                android:text="@{viewModel.name}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:maxLines="100"
+                android:scrollHorizontally="false"
+                android:textSize="12sp"
+                android:text="@{viewModel.description}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.ingredients.vegetarian ? View.VISIBLE : View.GONE}"
+                    android:src="@drawable/vegetarian" />
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.ingredients.pork ? View.VISIBLE : View.GONE}"
+                    android:src="@drawable/pork" />
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.ingredients.beef ? View.VISIBLE : View.GONE}"
+                    android:src="@drawable/beef" />
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.ingredients.alcohol ? View.VISIBLE : View.GONE}"
+                    android:src="@drawable/alcohol" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="10sp"
+                android:text="@{viewModel.priceText}" />
+
+            <!-- add soem additional space to the last element
+                 to allow scrolling it past the FAB -->
+            <LinearLayout
+                android:visibility="@{viewModel.isLastItem ? View.VISIBLE : View.GONE}"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp" />
+        </LinearLayout>
+    </GridLayout>
+</layout>

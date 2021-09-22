@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="viewModel"
+            type="de.renebergelt.mensachemnitz.viewmodels.DayViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/tab_header_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/tab_header_bg_selector"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/tab_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/tab_header_fg_selector"
+            android:text = "@{viewModel.dateTitle}"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tab_header_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:text = "@{viewModel.dateText}"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+</layout>
